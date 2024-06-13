@@ -169,3 +169,18 @@ nav{
   display:none;
   
 }
+
+
+
+footer {
+  background: var(--color-gray-900);
+  margin-top: 6rem;
+  padding-top: 6rem;
+  }
+  .footer_categories {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+  }
