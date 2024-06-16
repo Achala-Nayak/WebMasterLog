@@ -14,7 +14,7 @@ const Header = () => {
         <img src="Logo"  alt="Logo"/>     
       </Link>
       <ul className="nav_menu">
-        <li><Link to='/profile/asdfg'>Achala Nayak</Link></li>
+        <li><Link to='/profile/asdfg'>Harry</Link></li>
         <li><Link to='/create'>Create Post</Link></li>
         <li><Link to='/authors'>Authors</Link></li>
         <li><Link to='/logout'>Log Out</Link></li>
