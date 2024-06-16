@@ -1,11 +1,24 @@
+
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import PostAuthor from './PostAuthor'
 
 const PostItem = ({ postID, category, title, description, authorID, thumbnail }) => {
-  const shortDesc= description.length>150 ? description.substr(0,145)+"....." : description;
-  const postTitle= title.length>30 ? title.substr(0,30)+"....." : title;
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  const shortDesc = description.length > 150 ? description.substr(0, 145) + "....." : description;
+  const postTitle = title.length > 30 ? title.substr(0, 30) + "....." : title;
 
+  const handleCategoryClick = (e) => {
+    e.preventDefault();
+    if (location.pathname === `/posts/categories/${category}`) {
+      
+      navigate('/');
+    } else {
+      navigate(`/posts/categories/${category}`);
+    }
+  }
 
   return (
     <article className='post'>
@@ -19,7 +32,7 @@ const PostItem = ({ postID, category, title, description, authorID, thumbnail })
         <p>{shortDesc}</p>
         <div className='post_footer'>
           <PostAuthor authorID={authorID} />
-          <Link to={`posts/categories/${category}` }className='btn category'>{category}</Link>
+          <a href="#" onClick={handleCategoryClick} className='btn category'>{category}</a>
         </div>
       </div>
     </article>
