@@ -15,25 +15,25 @@ const authorsData=[
 
 const Authors = () => {
   const[authors,setAuthors]=useState(authorsData)
-
-
   return (
     <section className='authors'>
-      {authors.length > 0? <div className='container auhtors_conatiner'>
+      {authors.length > 0? <div className='container authors_container'>
         {
           authors.map(({id,avatar,name,posts})=>{
-            return<Link key={id} to={`/posts/users/${id}`}>
-              <div>
+            return<Link key={id} to={`/posts/users/${id}`} className='author'>
+              <div className='author_avatar'>
                <img src={avatar} alt={`Image of ${name}`}/>
               </div>
               <div className='author_info'>
+              <h4>{name}</h4>
+              <p>{posts}</p>
 
               </div>
             </Link>
 
           })
         }
-      </div>: <h2>No Authors Found.</h2> }
+      </div>: <h2 className='center'>No Authors Found.</h2> }
     
     
     </section>
