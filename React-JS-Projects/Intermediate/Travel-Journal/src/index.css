@@ -453,3 +453,55 @@ input,select,textarea{
 .author_info p{
   margin-top:1rem;
 }
+
+
+
+
+
+/* ###################### DASHBOARD ####################### */
+
+.dashboard_contianer{
+  display: flex;
+  flex-direction: column;
+  gap: 0.7 rem
+}
+
+.dashboard_post {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1 rem;
+  background: var(--color-white);
+  padding: 0.5rem 1.2rem;
+  border-radius: var(--radius-3);
+}
+
+.dashboard_post_info {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  align-items: center;
+}
+
+.dashboard_post_thumbnail {
+  width: 4rem;
+  height: 4rem;
+  border-radius: var(--radius-1);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.dashboard_post_thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.dashboard_post_actions{
+  display: flex;
+  gap: 1rem;
+}
+
