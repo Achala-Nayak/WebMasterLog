@@ -10,7 +10,7 @@ const CreatePost = () => {
 
   const modules = {
     toolbar: [
-        [{ 'header': [1, 2, false] }],
+        [{ 'header': [1, 2,3,4,5,6, false] }],
         ['bold', 'italic', 'underline', 'strike', 'blockquote'],
         [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
         ['link', 'image'],
@@ -31,7 +31,7 @@ const POST_CATEGORIES = ["National", "International"];
     <section className='create-post'>
       <div className='container'>
         <h2>Create Post</h2>
-        <p className='form_error_message'>
+        <p className='form_error_mess'>
           Error
         </p>
         <form className='form create_post_form'>
@@ -40,10 +40,11 @@ const POST_CATEGORIES = ["National", "International"];
             {
               POST_CATEGORIES.map(cat => <option key={cat}>{cat}</option>)
             }
-            <ReactQuill modules={module} formats={formats} value={description} onChange={setDescription}/>
+          </select>
+            <ReactQuill modules={modules} formats={formats} value={description} onChange={setDescription}/>
             <input type="file" onChange={e=>setThumbnail(e.target.files[0])} accept='png,jpg,jpeg'/>
             <button type='submit' className='btn primary'>Create</button>
-          </select>
+          
           
         </form>
       </div>
